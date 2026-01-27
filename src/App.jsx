@@ -4,14 +4,46 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 // NO REACT, COMPONENTES SÃO FUNÇÕES
+// props é um objeto
+//props.algumacoisa
+function TituloFormulario({children}) {
+  return (
+    <h2>{children}</h2>
+  )
+}
+
+function CampoDeFormulario({children}) {
+  return (
+    <fieldset>
+      {children}
+    </fieldset>
+  )
+}
+
+function Label({children}, htmlFor) {
+  return (
+    <label htmlFor={htmlFor}>{children}</label>
+  )
+}
+
+function CampoDeEntrada(props) {
+  return (
+    <input {...props} />
+  )
+}
 
 function FormularioDeEvento() {
-  Return (
-    <form action="">
-      <h2>Preencha para criar um evento</h2>
-      <fieldset>
-        <label for="nome">Qual o nome do evento</label>
-      </fieldset>
+  return (
+    <form action="" className='form-evento'>
+      <TituloFormulario>
+        Preencha para criar um evento
+      </TituloFormulario> 
+      <CampoDeFormulario>
+        <Label htmlFor="nome">
+          Qual o nome do evento
+        </Label>
+        <CampoDeEntrada type="text" id="nome" name="nome" placeholder="Summer Dev Hits" />
+      </CampoDeFormulario>
     </form>
   )
 }
@@ -28,6 +60,7 @@ function App() {
       <section>
         <img src="/banner.png " alt="" />
       </section>
+      <FormularioDeEvento />
     </main>
   )
   
