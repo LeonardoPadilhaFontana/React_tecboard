@@ -1,8 +1,7 @@
-import { CampoDeEntrada } from "../CampoDeEntrada";
-import { CampoDeFormulario } from "../CampoDeFormulario";
-import { Label } from "../Label";
-import { TituloFormulario } from "../TituloFormulario";
-
+import {TituloFormulario} from './components/TituloFormulario'
+import {CampoDeFormulario} from './components/CampoDeFormulario'
+import {Label} from './components/Label'
+import {CampoDeEntrada} from './components/CampoDeEntrada'
 
 
 export function FormularioDeEvento() {
